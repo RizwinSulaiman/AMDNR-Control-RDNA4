@@ -1,0 +1,40 @@
+﻿{
+  "upstream": "https://github.com/lmxxf/dlss5-on-amd-9070xt-porting.git",
+  "amdnr_bundle_reference": {
+    "version": "0.31",
+    "commit": "1c3950c811ea8de7e10d5aa55e99cbf7f75446c9",
+    "note": "AMDNR 0.3.4 documents its bundled RDNA4 lmxxf kernels as 0.31."
+  },
+  "strict_bit_exact": {
+    "version": "0.35",
+    "commit": "ec96774dca27badee9c6429d7c55586484188911",
+    "why": "Latest release whose production path remains transitively bit-exact with 0.31. 0.36 deliberately changes activation rounding via float FMA."
+  },
+  "latest_release": {
+    "version": "0.38",
+    "commit": "e1b1a18c71d063431788ea0ec8dcf1ccb7c2de08",
+    "bit_exact_to": "0.36",
+    "strict_bit_exact_to_0_31": false
+  },
+  "latest_audited_main": {
+    "commit": "4c207ff404eca3e63c269cb8a990a14f8cf8c60d",
+    "audited_at": "2026-09-30T16:00:00-04:00",
+    "strict_bit_exact_to_0_31": false,
+    "note": "Contains accepted post-0.38 production wins plus default-off rejected experiments. Do not consume main wholesale for strict mode."
+  },
+  "accepted_post_0_38": [
+    {"commit":"79a1b48944a6de9f1e6579a3167fe0c864c1511a","change":"HIP_C512_HOIST_RES","bit_exact_to_0_38":true},
+    {"commit":"1dd5870807587e341900ba6832dc9ab91fa487df","change":"W2_HOIST_LOADS + CW_HOIST_UP","bit_exact_to_0_38":true},
+    {"commit":"e5069f0788f3398ea714a65a1b3db984f2bda79b","change":"C512_COMPACT_FUSEQKV","bit_exact_to_0_38":true},
+    {"commit":"e4c3ecb1c0949f5adef7891e3db04cfd9e94d7c8","change":"C512_FFN_ONE","bit_exact_to_0_38":true},
+    {"commit":"7acaffb11712fa84c67b4360a6a999bf4a0aa91c","change":"W2_UP_LOW_BYTES","bit_exact_to_0_38":true},
+    {"commit":"e65ba051ddd0f027a16cdfc82134096d77bcfba1","change":"W2_DOWN_HALF + MH_POOL_HALF_IN","bit_exact_to_0_38":true}
+  ],
+  "excluded": [
+    "0.36 float-FMA activation baseline change (not bit-exact to 0.31)",
+    "DLSS5_NETWORK_1080_ROWS=1088 (lossy)",
+    "DLSS5_VIT_ADAPTIVE / adaptive reuse (lossy)",
+    "all default-off experiments recorded as slower, null, mixed, or not accepted",
+    "PR 12 head: not merged/accepted into production"
+  ]
+}
