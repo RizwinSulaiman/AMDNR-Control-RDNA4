@@ -88,10 +88,10 @@
     },
     {
       "id": "theautomatic",
-      "version": "1.9.1-alpha",
-      "url": "https://github.com/TheAutomatic/dlss-5-amd-project/releases/download/v1.9.1-alpha/OptiScaler-AMD-PreSR-1.9.1-alpha.zip",
-      "sha256": "bc0799ee408f50a0766f250118022a6c030f46a3d2bf75e9715266ad2a3c247a",
-      "size": 132549025,
+      "version": "1.9.8.1",
+      "url": "https://github.com/TheAutomatic/dlss-5-amd-project/releases/download/v1.9.8.1/OptiScaler-AMD-PreSR-1.9.8.1.zip",
+      "sha256": "199d156415c40f9110d220a93daae1e55267a5d24c5162da72a90509a3a2a11d",
+      "size": 137674082,
       "exclude": ["Setup.bat", "Setup.ps1", "Uninstall_OptiScaler_NR.bat", "Uninstall_OptiScaler_NR.ps1"]
     },
     {
